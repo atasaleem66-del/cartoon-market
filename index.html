@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartoon Market</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f4ff;
+            color: #222;
+        }
+
+        header {
+            background: #6c4cff;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #6c4cff;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .products {
+            padding: 40px 8%;
+        }
+
+        .products h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 280px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .cartoon-placeholder {
+            height: 200px;
+            background: #eeeaff;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+        }
+
+        .price {
+            color: #6c4cff;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 12px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            background: #222;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎨 Cartoon Market</h1>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#cartoons">Cartoons</a>
+        <a href="#upload">Upload</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Buy & Sell Amazing Cartoons 🎨</h2>
+
+    <p>
+        Discover unique cartoons and digital artwork from creative artists.
+    </p>
+
+    <a href="#cartoons" class="button">Explore Cartoons</a>
+</section>
+
+<section class="products" id="cartoons">
+
+    <h2>Featured Cartoons</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="cartoon-placeholder">🦸</div>
+
+            <h3>Super Hero Cartoon</h3>
+
+            <p>High-quality digital cartoon artwork.</p>
+
+            <div class="price">Rs. 500</div>
+
+            <a href="#" class="button">Buy Now</a>
+        </div>
+
+
+        <div class="card">
+            <div class="cartoon-placeholder">🐱</div>
+
+            <h3>Cute Cat Cartoon</h3>
+
+            <p>Perfect cartoon artwork for your projects.</p>
+
+            <div class="price">Rs. 300</div>
+
+            <a href="#" class="button">Buy Now</a>
+        </div>
+
+
+        <div class="card">
+            <div class="cartoon-placeholder">🚀</div>
+
+            <h3>Space Cartoon</h3>
+
+            <p>Fun space-themed digital artwork.</p>
+
+            <div class="price">Rs. 700</div>
+
+            <a href="#" class="button">Buy Now</a>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Cartoon Market — All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
