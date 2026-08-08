@@ -4,67 +4,117 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cartoon Market</title>
+<title>Cartoon Market | Tanzeel Sheikh</title>
 
 <style>
 
-body{
+*{
+    box-sizing:border-box;
     margin:0;
+    padding:0;
+}
+
+body{
     font-family:Arial,sans-serif;
     background:#f7f4ff;
     color:#222;
 }
 
+/* NAVBAR */
+
 header{
-    background:#6c4cff;
+    background:linear-gradient(135deg,#6c4cff,#9b5cff);
     color:white;
     padding:20px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    position:sticky;
+    top:0;
+    z-index:10;
+    box-shadow:0 4px 20px rgba(0,0,0,0.15);
 }
 
 header h1{
-    margin:0;
+    font-size:26px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin-left:20px;
+    margin-left:22px;
+    font-weight:bold;
 }
 
+/* HERO */
+
 .hero{
+    min-height:650px;
+    padding:50px 20px;
     text-align:center;
-    padding:70px 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:
+        radial-gradient(circle at top,#dcd2ff,#f7f4ff 60%);
 }
 
 .hero h2{
-    font-size:45px;
+    font-size:44px;
+    margin-bottom:12px;
 }
 
 .hero p{
     font-size:18px;
     color:#666;
+    margin-bottom:25px;
 }
 
+/* VIDEO */
+
+.hero-video{
+    width:90%;
+    max-width:900px;
+    height:auto;
+    max-height:500px;
+    object-fit:cover;
+    border-radius:24px;
+    margin-bottom:30px;
+    box-shadow:0 15px 45px rgba(80,50,180,0.30);
+}
+
+/* BUTTON */
+
 .button{
-    background:#6c4cff;
+    display:inline-block;
+    background:linear-gradient(135deg,#6c4cff,#9b5cff);
     color:white;
-    padding:12px 25px;
-    border-radius:10px;
+    padding:13px 27px;
+    border-radius:12px;
     text-decoration:none;
     border:none;
     cursor:pointer;
+    font-weight:bold;
+    font-size:16px;
+    transition:0.3s;
 }
 
+.button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(108,76,255,0.35);
+}
+
+/* PRODUCTS */
+
 .products{
-    padding:40px 8%;
+    padding:70px 8%;
 }
 
 .products h2{
     text-align:center;
-    font-size:32px;
+    font-size:34px;
+    margin-bottom:40px;
 }
 
 .cards{
@@ -78,47 +128,121 @@ nav a{
     background:white;
     width:320px;
     padding:18px;
-    border-radius:18px;
-    box-shadow:0 5px 20px #ddd;
+    border-radius:20px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.10);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
 
 .card img{
     width:100%;
-    height:210px;
+    height:220px;
     object-fit:cover;
-    border-radius:12px;
+    border-radius:14px;
 }
 
 .card h3{
-    font-size:22px;
+    font-size:21px;
+    margin-top:18px;
+    margin-bottom:10px;
 }
 
 .card p{
     color:#666;
+    line-height:1.5;
 }
 
 .free{
-    color:green;
+    color:#159447;
     font-size:25px;
     font-weight:bold;
-    margin:15px 0;
+    margin:16px 0;
 }
 
+/* PLACEHOLDER CARTOONS */
+
+.placeholder{
+    height:220px;
+    background:linear-gradient(135deg,#eeeaff,#ddd5ff);
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:75px;
+}
+
+/* ABOUT */
+
+.about{
+    background:white;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.about h2{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.about p{
+    max-width:650px;
+    margin:auto;
+    color:#666;
+    line-height:1.7;
+}
+
+/* FOOTER */
+
 footer{
-    background:#222;
+    background:#171321;
     color:white;
     text-align:center;
-    padding:25px;
-    margin-top:50px;
+    padding:30px;
+}
+
+footer p{
+    margin:6px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav a{
+        margin:0 7px;
+    }
+
+    .hero{
+        min-height:550px;
+    }
+
+    .hero h2{
+        font-size:32px;
+    }
+
+    .hero-video{
+        width:96%;
+    }
+
 }
 
 </style>
 
 </head>
 
-
 <body>
 
+
+<!-- NAVIGATION -->
 
 <header>
 
@@ -127,41 +251,63 @@ footer{
 <nav>
 <a href="#">Home</a>
 <a href="#cartoons">Cartoons</a>
-<a href="#">Upload</a>
+<a href="#about">About</a>
 </nav>
 
 </header>
 
 
+<!-- HERO -->
 
 <section class="hero">
 
-<h2>Free Amazing Cartoons 🎨</h2>
+<video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+>
+
+<source
+src="Hailuo_Video_Create a 10-second cinematic 2_542467477408669697.mp4"
+type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+
+<h2>Welcome to Cartoon Market 🎨</h2>
 
 <p>
-Download creative cartoon artwork for free.
+Discover and download amazing cartoon artwork for free.
 </p>
 
-<a class="button" href="#cartoons">
+<a href="#cartoons" class="button">
 Explore Cartoons
 </a>
 
 </section>
 
 
+<!-- CARTOONS -->
 
 <section class="products" id="cartoons">
 
-<h2>Featured Cartoons</h2>
+<h2>✨ Featured Cartoons</h2>
 
 
 <div class="cards">
 
 
+<!-- CARTOON 1 -->
 
 <div class="card">
 
-<img src="cartoon1.png">
+<img
+src="cartoon1.png"
+alt="The Mysterious Cricket Forest">
 
 <h3>
 The Mysterious Cricket Forest
@@ -175,26 +321,22 @@ A magical cricket scene where a mysterious forest comes alive.
 FREE
 </div>
 
-<a class="button" href="cartoon1.png" download>
+<a
+class="button"
+href="cartoon1.png"
+download="The-Mysterious-Cricket-Forest.png">
+
 Download
 </a>
 
 </div>
 
 
-
+<!-- CARTOON 2 -->
 
 <div class="card">
 
-<div style="
-height:210px;
-background:#eeeaff;
-border-radius:12px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px;
-">
+<div class="placeholder">
 🐱
 </div>
 
@@ -203,7 +345,7 @@ Cute Cat Cartoon
 </h3>
 
 <p>
-A cute cartoon character free for everyone.
+A cute cartoon character available for free.
 </p>
 
 <div class="free">
@@ -217,20 +359,11 @@ Download
 </div>
 
 
-
-
+<!-- CARTOON 3 -->
 
 <div class="card">
 
-<div style="
-height:210px;
-background:#eeeaff;
-border-radius:12px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px;
-">
+<div class="placeholder">
 🚀
 </div>
 
@@ -239,7 +372,7 @@ Space Cartoon
 </h3>
 
 <p>
-Fun space cartoon artwork for creative projects.
+A fun space-themed cartoon for creative projects.
 </p>
 
 <div class="free">
@@ -253,16 +386,36 @@ Download
 </div>
 
 
-
 </div>
 
 </section>
 
 
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<h2>🌟 About Cartoon Market</h2>
+
+<p>
+Cartoon Market is a creative place for discovering
+and sharing fun digital cartoon artwork.
+All featured cartoons are currently available for free.
+More artwork will be added soon!
+</p>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-© 2026 Cartoon Market - Free Cartoon Library
+<p>🎨 Cartoon Market</p>
+
+<p>Created by Tanzeel Sheikh</p>
+
+<p>© 2026 Cartoon Market</p>
 
 </footer>
 
