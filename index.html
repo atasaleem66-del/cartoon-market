@@ -9,112 +9,187 @@
 <style>
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#f7f4ff;
-    color:#222;
+    font-family:Arial, sans-serif;
+    background:#000;
+    color:white;
 }
 
-/* NAVBAR */
+
+/* ================= NAVBAR ================= */
 
 header{
-    background:linear-gradient(135deg,#6c4cff,#9b5cff);
-    color:white;
-    padding:20px 8%;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:22px 7%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    position:sticky;
-    top:0;
     z-index:10;
-    box-shadow:0 4px 20px rgba(0,0,0,0.15);
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.75),
+        transparent
+    );
 }
 
-header h1{
-    font-size:26px;
+.logo{
+    font-size:27px;
+    font-weight:bold;
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin-left:22px;
+    margin-left:28px;
     font-weight:bold;
+    font-size:16px;
 }
 
-/* HERO */
+nav a:hover{
+    color:#c8b8ff;
+}
+
+
+/* ================= FULL SCREEN HERO ================= */
 
 .hero{
-    min-height:650px;
-    padding:50px 20px;
-    text-align:center;
+    height:100vh;
+    min-height:600px;
+    position:relative;
+    overflow:hidden;
+
     display:flex;
-    flex-direction:column;
-    justify-content:center;
     align-items:center;
-    background:
-        radial-gradient(circle at top,#dcd2ff,#f7f4ff 60%);
+    justify-content:center;
+
+    text-align:center;
 }
 
-.hero h2{
-    font-size:44px;
-    margin-bottom:12px;
-}
-
-.hero p{
-    font-size:18px;
-    color:#666;
-    margin-bottom:25px;
-}
 
 /* VIDEO */
 
 .hero-video{
-    width:90%;
-    max-width:900px;
-    height:auto;
-    max-height:500px;
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
     object-fit:cover;
-    border-radius:24px;
-    margin-bottom:30px;
-    box-shadow:0 15px 45px rgba(80,50,180,0.30);
+
+    z-index:0;
 }
 
-/* BUTTON */
+
+/* DARK OVERLAY */
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.70)
+        );
+
+    z-index:1;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    width:90%;
+    max-width:900px;
+
+    margin-top:60px;
+}
+
+.hero-content h1{
+    font-size:64px;
+    margin-bottom:20px;
+
+    text-shadow:
+        0 4px 20px rgba(0,0,0,0.8);
+}
+
+.hero-content p{
+    font-size:21px;
+    margin-bottom:30px;
+
+    text-shadow:
+        0 3px 12px rgba(0,0,0,0.9);
+}
+
+
+/* BUTTONS */
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
 
 .button{
     display:inline-block;
-    background:linear-gradient(135deg,#6c4cff,#9b5cff);
-    color:white;
-    padding:13px 27px;
+
+    padding:15px 30px;
+
     border-radius:12px;
+
     text-decoration:none;
-    border:none;
-    cursor:pointer;
+
     font-weight:bold;
-    font-size:16px;
+
     transition:0.3s;
 }
 
-.button:hover{
-    transform:translateY(-3px);
-    box-shadow:0 8px 20px rgba(108,76,255,0.35);
+.primary{
+    background:#704cff;
+    color:white;
 }
 
-/* PRODUCTS */
+.secondary{
+    background:white;
+    color:#222;
+}
+
+.button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+
+/* ================= CARTOONS ================= */
 
 .products{
-    padding:70px 8%;
+    background:#000;
+    padding:90px 7%;
 }
 
 .products h2{
     text-align:center;
-    font-size:34px;
-    margin-bottom:40px;
+    font-size:38px;
+    margin-bottom:50px;
 }
 
 .cards{
@@ -124,83 +199,144 @@ nav a{
     flex-wrap:wrap;
 }
 
+
+/* CARD */
+
 .card{
-    background:white;
     width:320px;
+
+    background:#151515;
+
+    border:1px solid #292929;
+
     padding:18px;
+
     border-radius:20px;
-    box-shadow:0 8px 30px rgba(0,0,0,0.10);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.5);
+
     transition:0.3s;
 }
 
 .card:hover{
     transform:translateY(-8px);
-    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+
+    border-color:#704cff;
+
+    box-shadow:
+        0 15px 45px rgba(112,76,255,0.25);
 }
+
+
+/* IMAGE */
 
 .card img{
     width:100%;
     height:220px;
+
     object-fit:cover;
+
     border-radius:14px;
 }
 
+
+/* PLACEHOLDER */
+
+.placeholder{
+    height:220px;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #27204a,
+            #161616
+        );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:75px;
+}
+
+
+/* CARD TEXT */
+
 .card h3{
-    font-size:21px;
+    font-size:22px;
     margin-top:18px;
     margin-bottom:10px;
 }
 
 .card p{
-    color:#666;
+    color:#aaa;
     line-height:1.5;
 }
 
+
+/* FREE */
+
 .free{
-    color:#159447;
+    color:#20d66b;
+
     font-size:25px;
+
     font-weight:bold;
-    margin:16px 0;
+
+    margin:17px 0;
 }
 
-/* PLACEHOLDER CARTOONS */
 
-.placeholder{
-    height:220px;
-    background:linear-gradient(135deg,#eeeaff,#ddd5ff);
-    border-radius:14px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:75px;
+/* DOWNLOAD */
+
+.download{
+    background:#704cff;
+    color:white;
 }
 
-/* ABOUT */
+.download:hover{
+    background:#8b6cff;
+}
+
+
+/* ================= ABOUT ================= */
 
 .about{
-    background:white;
+    background:#101010;
+
     text-align:center;
-    padding:70px 20px;
+
+    padding:80px 20px;
 }
 
 .about h2{
-    font-size:32px;
-    margin-bottom:15px;
+    font-size:34px;
+    margin-bottom:18px;
 }
 
 .about p{
     max-width:650px;
+
     margin:auto;
-    color:#666;
+
+    color:#aaa;
+
     line-height:1.7;
 }
 
-/* FOOTER */
+
+/* ================= FOOTER ================= */
 
 footer{
-    background:#171321;
-    color:white;
+    background:#080808;
+
+    color:#888;
+
     text-align:center;
+
     padding:30px;
 }
 
@@ -208,45 +344,52 @@ footer p{
     margin:6px;
 }
 
-/* MOBILE */
+
+/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
     header{
-        flex-direction:column;
-        gap:15px;
+        padding:18px 5%;
+    }
+
+    .logo{
+        font-size:21px;
     }
 
     nav a{
-        margin:0 7px;
+        margin-left:10px;
+        font-size:13px;
     }
 
-    .hero{
-        min-height:550px;
+    .hero-content h1{
+        font-size:38px;
     }
 
-    .hero h2{
-        font-size:32px;
+    .hero-content p{
+        font-size:17px;
     }
 
-    .hero-video{
-        width:96%;
+    .products{
+        padding:60px 5%;
     }
 
 }
 
 </style>
-
 </head>
+
 
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- ================= NAVBAR ================= -->
 
 <header>
 
-<h1>🎨 Cartoon Market</h1>
+<div class="logo">
+🎨 Cartoon Market
+</div>
 
 <nav>
 <a href="#">Home</a>
@@ -257,9 +400,11 @@ footer p{
 </header>
 
 
-<!-- HERO -->
+
+<!-- ================= FULL SCREEN VIDEO ================= -->
 
 <section class="hero">
+
 
 <video
     class="hero-video"
@@ -273,29 +418,56 @@ footer p{
 src="Hailuo_Video_Create a 10-second cinematic 2_542467477408669697.mp4"
 type="video/mp4">
 
-Your browser does not support video.
-
 </video>
 
 
-<h2>Welcome to Cartoon Market 🎨</h2>
+
+<!-- TEXT INSIDE VIDEO -->
+
+<div class="hero-content">
+
+<h1>
+Welcome to Cartoon Market 🎨
+</h1>
 
 <p>
-Discover and download amazing cartoon artwork for free.
+Discover amazing cartoon artwork and download creative designs for free.
 </p>
 
-<a href="#cartoons" class="button">
+
+<div class="buttons">
+
+<a
+href="#cartoons"
+class="button primary">
 Explore Cartoons
 </a>
+
+
+<a
+href="#cartoons"
+class="button secondary">
+Free Downloads
+</a>
+
+</div>
+
+</div>
+
 
 </section>
 
 
-<!-- CARTOONS -->
 
-<section class="products" id="cartoons">
+<!-- ================= CARTOONS ================= -->
 
-<h2>✨ Featured Cartoons</h2>
+<section
+class="products"
+id="cartoons">
+
+<h2>
+✨ Featured Cartoons
+</h2>
 
 
 <div class="cards">
@@ -322,14 +494,16 @@ FREE
 </div>
 
 <a
-class="button"
+class="button download"
 href="cartoon1.png"
 download="The-Mysterious-Cricket-Forest.png">
 
 Download
+
 </a>
 
 </div>
+
 
 
 <!-- CARTOON 2 -->
@@ -352,11 +526,16 @@ A cute cartoon character available for free.
 FREE
 </div>
 
-<button class="button">
+<a
+href="#"
+class="button download">
+
 Download
-</button>
+
+</a>
 
 </div>
+
 
 
 <!-- CARTOON 3 -->
@@ -372,16 +551,20 @@ Space Cartoon
 </h3>
 
 <p>
-A fun space-themed cartoon for creative projects.
+A fun space-themed cartoon available for free.
 </p>
 
 <div class="free">
 FREE
 </div>
 
-<button class="button">
+<a
+href="#"
+class="button download">
+
 Download
-</button>
+
+</a>
 
 </div>
 
@@ -391,11 +574,16 @@ Download
 </section>
 
 
-<!-- ABOUT -->
 
-<section class="about" id="about">
+<!-- ================= ABOUT ================= -->
 
-<h2>🌟 About Cartoon Market</h2>
+<section
+class="about"
+id="about">
+
+<h2>
+🌟 About Cartoon Market
+</h2>
 
 <p>
 Cartoon Market is a creative place for discovering
@@ -407,7 +595,8 @@ More artwork will be added soon!
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
