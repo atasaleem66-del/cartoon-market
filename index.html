@@ -1,12 +1,21 @@
  <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Cartoon Market | Tanzeel Sheikh</title>
 
+
 <style>
+
+/* =========================
+   BASIC
+========================= */
 
 *{
     margin:0;
@@ -19,58 +28,75 @@ html{
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     background:#000;
     color:white;
 }
 
 
-/* ================= NAVBAR ================= */
+/* =========================
+   NAVBAR
+========================= */
 
 header{
     position:absolute;
     top:0;
     left:0;
     width:100%;
+
     padding:22px 7%;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    z-index:10;
+
+    z-index:20;
+
     background:linear-gradient(
         to bottom,
-        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.8),
         transparent
     );
 }
 
 .logo{
-    font-size:27px;
+    font-size:28px;
     font-weight:bold;
 }
 
 nav a{
     color:white;
     text-decoration:none;
+
     margin-left:28px;
-    font-weight:bold;
+
     font-size:16px;
+    font-weight:bold;
+
+    transition:0.3s;
 }
 
 nav a:hover{
-    color:#c8b8ff;
+    color:#bdaeff;
 }
 
 
-/* ================= FULL SCREEN HERO ================= */
+/* =========================
+   HERO / FULL SCREEN VIDEO
+========================= */
 
 .hero{
-    height:100vh;
-    min-height:600px;
+
     position:relative;
+
+    width:100%;
+    height:100vh;
+    min-height:650px;
+
     overflow:hidden;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
@@ -81,7 +107,9 @@ nav a:hover{
 /* VIDEO */
 
 .hero-video{
+
     position:absolute;
+
     top:0;
     left:0;
 
@@ -97,14 +125,17 @@ nav a:hover{
 /* DARK OVERLAY */
 
 .hero::after{
+
     content:"";
+
     position:absolute;
+
     inset:0;
 
     background:
         linear-gradient(
-            rgba(0,0,0,0.35),
-            rgba(0,0,0,0.70)
+            rgba(0,0,0,0.25),
+            rgba(0,0,0,0.75)
         );
 
     z-index:1;
@@ -114,45 +145,64 @@ nav a:hover{
 /* HERO CONTENT */
 
 .hero-content{
+
     position:relative;
+
     z-index:2;
 
     width:90%;
-    max-width:900px;
+
+    max-width:1000px;
 
     margin-top:60px;
 }
 
+
 .hero-content h1{
+
     font-size:64px;
-    margin-bottom:20px;
+
+    line-height:1.1;
+
+    margin-bottom:22px;
 
     text-shadow:
-        0 4px 20px rgba(0,0,0,0.8);
+        0 5px 25px rgba(0,0,0,0.9);
 }
+
 
 .hero-content p{
+
     font-size:21px;
-    margin-bottom:30px;
+
+    line-height:1.6;
+
+    margin-bottom:32px;
 
     text-shadow:
-        0 3px 12px rgba(0,0,0,0.9);
+        0 3px 15px rgba(0,0,0,0.9);
 }
 
 
-/* BUTTONS */
+/* HERO BUTTONS */
 
-.buttons{
+.hero-buttons{
+
     display:flex;
+
     justify-content:center;
-    gap:15px;
+
+    gap:16px;
+
     flex-wrap:wrap;
 }
 
-.button{
+
+.hero-button{
+
     display:inline-block;
 
-    padding:15px 30px;
+    padding:16px 30px;
 
     border-radius:12px;
 
@@ -160,454 +210,981 @@ nav a:hover{
 
     font-weight:bold;
 
-    transition:0.3s;
-}
-
-.primary{
-    background:#704cff;
-    color:white;
-}
-
-.secondary{
-    background:white;
-    color:#222;
-}
-
-.button:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 30px rgba(0,0,0,0.5);
-}
-
-
-/* ================= CARTOONS ================= */
-
-.products{
-    background:#000;
-    padding:90px 7%;
-}
-
-.products h2{
-    text-align:center;
-    font-size:38px;
-    margin-bottom:50px;
-}
-
-.cards{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-}
-
-
-/* CARD */
-
-.card{
-    width:320px;
-
-    background:#151515;
-
-    border:1px solid #292929;
-
-    padding:18px;
-
-    border-radius:20px;
-
-    box-shadow:
-        0 10px 35px rgba(0,0,0,0.5);
+    font-size:16px;
 
     transition:0.3s;
 }
 
-.card:hover{
-    transform:translateY(-8px);
 
-    border-color:#704cff;
-
-    box-shadow:
-        0 15px 45px rgba(112,76,255,0.25);
-}
-
-
-/* IMAGE */
-
-.card img{
-    width:100%;
-    height:220px;
-
-    object-fit:cover;
-
-    border-radius:14px;
-}
-
-
-/* PLACEHOLDER */
-
-.placeholder{
-    height:220px;
-
-    border-radius:14px;
+.explore-button{
 
     background:
         linear-gradient(
             135deg,
-            #27204a,
-            #161616
+            #704cff,
+            #914cff
         );
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:75px;
-}
-
-
-/* CARD TEXT */
-
-.card h3{
-    font-size:22px;
-    margin-top:18px;
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#aaa;
-    line-height:1.5;
-}
-
-
-/* FREE */
-
-.free{
-    color:#20d66b;
-
-    font-size:25px;
-
-    font-weight:bold;
-
-    margin:17px 0;
-}
-
-
-/* DOWNLOAD */
-
-.download{
-    background:#704cff;
     color:white;
+
+    box-shadow:
+        0 10px 30px rgba(112,76,255,0.35);
 }
 
-.download:hover{
-    background:#8b6cff;
+
+.free-button{
+
+    background:white;
+
+    color:#111;
 }
 
 
-/* ================= ABOUT ================= */
+.hero-button:hover{
 
-.about{
-    background:#101010;
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.5);
+}
+
+
+/* =========================
+   FEATURED CARTOONS
+========================= */
+
+.products{
+
+    position:relative;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0%,
+            #281451 0%,
+            #0b0612 35%,
+            #000 75%
+        );
+
+    padding:110px 7% 120px;
+
+    overflow:hidden;
+}
+
+
+/* PURPLE GLOW */
+
+.products::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    top:-250px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#704cff;
+
+    opacity:0.08;
+
+    filter:blur(120px);
+
+    border-radius:50%;
+
+    pointer-events:none;
+}
+
+
+/* SECTION TITLE */
+
+.section-heading{
+
+    position:relative;
 
     text-align:center;
 
-    padding:80px 20px;
+    max-width:780px;
+
+    margin:
+        0 auto 60px;
 }
 
-.about h2{
-    font-size:34px;
+
+.small-title{
+
+    color:#a28aff;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    letter-spacing:4px;
+
+    margin-bottom:16px;
+}
+
+
+.section-heading h2{
+
+    font-size:48px;
+
     margin-bottom:18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #bcaeff,
+            #ffffff
+        );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
 }
 
-.about p{
-    max-width:650px;
 
-    margin:auto;
+.section-heading p{
 
-    color:#aaa;
+    color:#999;
+
+    font-size:17px;
 
     line-height:1.7;
 }
 
 
-/* ================= FOOTER ================= */
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+
+    position:relative;
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:30px;
+}
+
+
+.card{
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1b1b23,
+            #0d0d12
+        );
+
+    border:1px solid #292638;
+
+    border-radius:24px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.55);
+
+    transition:
+        transform 0.35s,
+        border-color 0.35s,
+        box-shadow 0.35s;
+}
+
+
+.card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#704cff;
+
+    box-shadow:
+        0 25px 70px
+        rgba(112,76,255,0.28);
+}
+
+
+/* =========================
+   CARD IMAGE
+========================= */
+
+.image-box{
+
+    position:relative;
+
+    width:100%;
+    height:250px;
+
+    overflow:hidden;
+
+    background:#17131f;
+}
+
+
+.image-box img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:
+        transform 0.5s;
+}
+
+
+.card:hover .image-box img{
+
+    transform:scale(1.07);
+}
+
+
+/* IMAGE OVERLAY */
+
+.image-box::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            transparent 40%,
+            rgba(0,0,0,0.55)
+        );
+
+    pointer-events:none;
+}
+
+
+/* =========================
+   FREE BADGE
+========================= */
+
+.free-badge{
+
+    position:absolute;
+
+    top:18px;
+    right:18px;
+
+    z-index:5;
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    background:#16c96b;
+
+    color:white;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    box-shadow:
+        0 6px 20px
+        rgba(22,201,107,0.4);
+}
+
+
+/* =========================
+   PLACEHOLDER CARTOONS
+========================= */
+
+.placeholder{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:
+        radial-gradient(
+            circle,
+            #352465,
+            #12101a
+        );
+}
+
+
+.big-emoji{
+
+    font-size:85px;
+
+    filter:
+        drop-shadow(
+            0 10px 25px
+            rgba(0,0,0,0.5)
+        );
+
+    transition:0.4s;
+}
+
+
+.card:hover .big-emoji{
+
+    transform:
+        scale(1.15)
+        rotate(5deg);
+}
+
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.card-content{
+
+    padding:25px;
+}
+
+
+.category{
+
+    color:#9d87ff;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    letter-spacing:0.5px;
+}
+
+
+.card-content h3{
+
+    color:white;
+
+    font-size:23px;
+
+    margin:
+        10px 0 12px;
+}
+
+
+.card-content p{
+
+    color:#999;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    min-height:68px;
+}
+
+
+/* =========================
+   CARD BOTTOM
+========================= */
+
+.card-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:22px;
+
+    padding-top:18px;
+
+    border-top:1px solid #292929;
+}
+
+
+.price{
+
+    color:#20d66b;
+
+    font-size:21px;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   DOWNLOAD BUTTON
+========================= */
+
+.download-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:6px;
+
+    padding:11px 17px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #704cff,
+            #914cff
+        );
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+
+.download-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(112,76,255,0.45);
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+
+    background:#0b0b0d;
+
+    padding:90px 20px;
+
+    text-align:center;
+}
+
+
+.about h2{
+
+    font-size:36px;
+
+    margin-bottom:20px;
+}
+
+
+.about p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#999;
+
+    line-height:1.8;
+
+    font-size:16px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    background:#080808;
 
-    color:#888;
+    background:#050505;
+
+    padding:35px 20px;
 
     text-align:center;
 
-    padding:30px;
+    color:#777;
 }
+
 
 footer p{
-    margin:6px;
+
+    margin:7px;
 }
 
 
-/* ================= MOBILE ================= */
+/* =========================
+   MOBILE
+========================= */
 
-@media(max-width:700px){
+@media(max-width:900px){
+
+    .cards{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:650px){
 
     header{
+
         padding:18px 5%;
     }
 
+
     .logo{
+
         font-size:21px;
     }
 
+
     nav a{
+
         margin-left:10px;
+
         font-size:13px;
     }
 
+
     .hero-content h1{
-        font-size:38px;
+
+        font-size:40px;
     }
 
+
     .hero-content p{
+
         font-size:17px;
     }
 
+
+    .section-heading h2{
+
+        font-size:36px;
+    }
+
+
+    .cards{
+
+        grid-template-columns:1fr;
+    }
+
+
     .products{
-        padding:60px 5%;
+
+        padding:
+            80px 5% 90px;
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- ================= NAVBAR ================= -->
+<!-- =========================
+     NAVBAR
+========================= -->
 
 <header>
 
-<div class="logo">
-🎨 Cartoon Market
-</div>
+    <div class="logo">
+        🎨 Cartoon Market
+    </div>
 
-<nav>
-<a href="#">Home</a>
-<a href="#cartoons">Cartoons</a>
-<a href="#about">About</a>
-</nav>
+
+    <nav>
+
+        <a href="#">
+            Home
+        </a>
+
+        <a href="#cartoons">
+            Cartoons
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+    </nav>
 
 </header>
 
 
 
-<!-- ================= FULL SCREEN VIDEO ================= -->
+<!-- =========================
+     HERO VIDEO
+========================= -->
 
 <section class="hero">
 
 
-<video
-    class="hero-video"
-    autoplay
-    muted
-    loop
-    playsinline
->
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+    >
 
-<source
-src="Hailuo_Video_Create a 10-second cinematic 2_542467477408669697.mp4"
-type="video/mp4">
+        <source
+        src="Hailuo_Video_Create a 10-second cinematic 2_542467477408669697.mp4"
+        type="video/mp4">
 
-</video>
-
-
-
-<!-- TEXT INSIDE VIDEO -->
-
-<div class="hero-content">
-
-<h1>
-Welcome to Cartoon Market 🎨
-</h1>
-
-<p>
-Discover amazing cartoon artwork and download creative designs for free.
-</p>
+    </video>
 
 
-<div class="buttons">
 
-<a
-href="#cartoons"
-class="button primary">
-Explore Cartoons
-</a>
+    <div class="hero-content">
+
+        <h1>
+            Welcome to Cartoon Market 🎨
+        </h1>
 
 
-<a
-href="#cartoons"
-class="button secondary">
-Free Downloads
-</a>
+        <p>
+            Discover amazing cartoon artwork
+            and download creative designs for free.
+        </p>
 
-</div>
 
-</div>
+        <div class="hero-buttons">
 
+            <a
+            href="#cartoons"
+            class="hero-button explore-button">
+
+                Explore Cartoons
+
+            </a>
+
+
+            <a
+            href="#cartoons"
+            class="hero-button free-button">
+
+                Free Downloads
+
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
 
 
-<!-- ================= CARTOONS ================= -->
+<!-- =========================
+     FEATURED CARTOONS
+========================= -->
 
 <section
 class="products"
 id="cartoons">
 
-<h2>
-✨ Featured Cartoons
-</h2>
+
+    <div class="section-heading">
+
+        <div class="small-title">
+            ✨ OUR COLLECTION
+        </div>
 
 
-<div class="cards">
+        <h2>
+            Featured Cartoons 🎨
+        </h2>
 
 
-<!-- CARTOON 1 -->
+        <p>
+            Discover beautiful cartoon artwork
+            created for creative minds.
+            Download your favorites for free!
+        </p>
 
-<div class="card">
-
-<img
-src="cartoon1.png"
-alt="The Mysterious Cricket Forest">
-
-<h3>
-The Mysterious Cricket Forest
-</h3>
-
-<p>
-A magical cricket scene where a mysterious forest comes alive.
-</p>
-
-<div class="free">
-FREE
-</div>
-
-<a
-class="button download"
-href="cartoon1.png"
-download="The-Mysterious-Cricket-Forest.png">
-
-Download
-
-</a>
-
-</div>
+    </div>
 
 
 
-<!-- CARTOON 2 -->
+    <div class="cards">
 
-<div class="card">
 
-<div class="placeholder">
-🐱
-</div>
+        <!-- =================
+             CARTOON 1
+        ================== -->
 
-<h3>
-Cute Cat Cartoon
-</h3>
+        <div class="card">
 
-<p>
-A cute cartoon character available for free.
-</p>
 
-<div class="free">
-FREE
-</div>
+            <div class="image-box">
 
-<a
-href="#"
-class="button download">
+                <img
+                src="cartoon1.png"
+                alt="The Mysterious Cricket Forest">
 
-Download
 
-</a>
+                <div class="free-badge">
+                    FREE
+                </div>
 
-</div>
+            </div>
 
 
 
-<!-- CARTOON 3 -->
-
-<div class="card">
-
-<div class="placeholder">
-🚀
-</div>
-
-<h3>
-Space Cartoon
-</h3>
-
-<p>
-A fun space-themed cartoon available for free.
-</p>
-
-<div class="free">
-FREE
-</div>
-
-<a
-href="#"
-class="button download">
-
-Download
-
-</a>
-
-</div>
+            <div class="card-content">
 
 
-</div>
+                <span class="category">
+                    🌙 Magical Cartoon
+                </span>
+
+
+                <h3>
+                    The Mysterious Cricket Forest
+                </h3>
+
+
+                <p>
+                    A magical cricket scene where
+                    a mysterious forest comes alive
+                    during a mysterious storm.
+                </p>
+
+
+
+                <div class="card-bottom">
+
+                    <div class="price">
+                        FREE
+                    </div>
+
+
+                    <a
+                    href="cartoon1.png"
+                    download="The-Mysterious-Cricket-Forest.png"
+                    class="download-btn">
+
+                        ⬇ Download
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================
+             CARTOON 2
+        ================== -->
+
+        <div class="card">
+
+
+            <div
+            class="image-box placeholder">
+
+                <div class="big-emoji">
+                    🐱
+                </div>
+
+
+                <div class="free-badge">
+                    FREE
+                </div>
+
+            </div>
+
+
+
+            <div class="card-content">
+
+
+                <span class="category">
+                    🐾 Cute Cartoon
+                </span>
+
+
+                <h3>
+                    Cute Cat Cartoon
+                </h3>
+
+
+                <p>
+                    A cute and friendly cartoon
+                    character perfect for
+                    creative projects.
+                </p>
+
+
+
+                <div class="card-bottom">
+
+                    <div class="price">
+                        FREE
+                    </div>
+
+
+                    <a
+                    href="#"
+                    class="download-btn">
+
+                        ⬇ Download
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================
+             CARTOON 3
+        ================== -->
+
+        <div class="card">
+
+
+            <div
+            class="image-box placeholder">
+
+                <div class="big-emoji">
+                    🚀
+                </div>
+
+
+                <div class="free-badge">
+                    FREE
+                </div>
+
+            </div>
+
+
+
+            <div class="card-content">
+
+
+                <span class="category">
+                    🚀 Space Cartoon
+                </span>
+
+
+                <h3>
+                    Space Cartoon
+                </h3>
+
+
+                <p>
+                    Explore a fun space-themed
+                    cartoon created for imagination
+                    and creativity.
+                </p>
+
+
+
+                <div class="card-bottom">
+
+                    <div class="price">
+                        FREE
+                    </div>
+
+
+                    <a
+                    href="#"
+                    class="download-btn">
+
+                        ⬇ Download
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
 
 </section>
 
 
 
-<!-- ================= ABOUT ================= -->
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section
 class="about"
 id="about">
 
-<h2>
-🌟 About Cartoon Market
-</h2>
 
-<p>
-Cartoon Market is a creative place for discovering
-and sharing fun digital cartoon artwork.
-All featured cartoons are currently available for free.
-More artwork will be added soon!
-</p>
+    <h2>
+        🌟 About Cartoon Market
+    </h2>
+
+
+    <p>
+        Cartoon Market is a creative place
+        for discovering and sharing fun digital
+        cartoon artwork. All featured cartoons
+        are currently available for free.
+        More artwork will be added soon!
+    </p>
 
 </section>
 
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-<p>🎨 Cartoon Market</p>
+    <p>
+        🎨 Cartoon Market
+    </p>
 
-<p>Created by Tanzeel Sheikh</p>
+    <p>
+        Created by Tanzeel Sheikh
+    </p>
 
-<p>© 2026 Cartoon Market</p>
+    <p>
+        © 2026 Cartoon Market
+    </p>
 
 </footer>
 
 
 </body>
+
 </html>
