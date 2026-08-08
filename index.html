@@ -1,367 +1,271 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cartoon Market</title>
+<title>Cartoon Market</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f7f4ff;
-            color: #222;
-        }
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f7f4ff;
+    color:#222;
+}
 
-        header {
-            background: #6c4cff;
-            color: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+header{
+    background:#6c4cff;
+    color:white;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-        header h1 {
-            font-size: 28px;
-        }
+header h1{
+    margin:0;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
 
-        .hero {
-            text-align: center;
-            padding: 70px 20px;
-        }
+.hero{
+    text-align:center;
+    padding:70px 20px;
+}
 
-        .hero h2 {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
+.hero h2{
+    font-size:45px;
+}
 
-        .hero p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 30px;
-        }
+.hero p{
+    font-size:18px;
+    color:#666;
+}
 
-        .button {
-            display: inline-block;
-            background: #6c4cff;
-            color: white;
-            padding: 14px 28px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-        }
+.button{
+    background:#6c4cff;
+    color:white;
+    padding:12px 25px;
+    border-radius:10px;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+}
 
-        .products {
-            padding: 40px 8%;
-        }
+.products{
+    padding:40px 8%;
+}
 
-        .products h2 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 35px;
-        }
+.products h2{
+    text-align:center;
+    font-size:32px;
+}
 
-        .cards {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
 
-        .card {
-            background: white;
-            width: 320px;
-            padding: 18px;
-            border-radius: 18px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
-            transition: 0.3s;
-        }
+.card{
+    background:white;
+    width:320px;
+    padding:18px;
+    border-radius:18px;
+    box-shadow:0 5px 20px #ddd;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+.card img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    border-radius:12px;
+}
 
-        .card img {
-            width: 100%;
-            height: 210px;
-            object-fit: cover;
-            border-radius: 12px;
-            display: block;
-        }
+.card h3{
+    font-size:22px;
+}
 
-        .card h3 {
-            margin-top: 18px;
-            margin-bottom: 8px;
-            font-size: 22px;
-        }
+.card p{
+    color:#666;
+}
 
-        .card p {
-            color: #666;
-            line-height: 1.5;
-        }
+.free{
+    color:green;
+    font-size:25px;
+    font-weight:bold;
+    margin:15px 0;
+}
 
-        .price {
-            color: #6c4cff;
-            font-size: 24px;
-            font-weight: bold;
-            margin: 15px 0;
-        }
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
 
-        .free {
-            color: #159447;
-            font-size: 24px;
-            font-weight: bold;
-            margin: 15px 0;
-        }
+</style>
 
-        .upload-section {
-            text-align: center;
-            padding: 70px 20px;
-            background: white;
-            margin-top: 50px;
-        }
-
-        .upload-section h2 {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .upload-section p {
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #222;
-            color: white;
-            margin-top: 50px;
-        }
-
-        @media (max-width: 700px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .hero h2 {
-                font-size: 32px;
-            }
-
-            nav a {
-                margin: 0 7px;
-            }
-        }
-    </style>
 </head>
+
 
 <body>
 
-<header>
-    <h1>🎨 Cartoon Market</h1>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#cartoons">Cartoons</a>
-        <a href="#upload">Upload</a>
-    </nav>
+<header>
+
+<h1>🎨 Cartoon Market</h1>
+
+<nav>
+<a href="#">Home</a>
+<a href="#cartoons">Cartoons</a>
+<a href="#">Upload</a>
+</nav>
+
 </header>
+
 
 
 <section class="hero">
 
-    <h2>Buy & Sell Amazing Cartoons 🎨</h2>
+<h2>Free Amazing Cartoons 🎨</h2>
 
-    <p>
-        Discover unique digital cartoons and artwork from creative artists.
-    </p>
+<p>
+Download creative cartoon artwork for free.
+</p>
 
-    <a href="#cartoons" class="button">
-        Explore Cartoons
-    </a>
+<a class="button" href="#cartoons">
+Explore Cartoons
+</a>
 
 </section>
+
 
 
 <section class="products" id="cartoons">
 
-    <h2>Featured Cartoons</h2>
-
-    <div class="cards">
-
-        <!-- CARTOON 1 -->
-
-        <div class="card">
-
-            <img src="cartoon1.png" alt="The Mysterious Cricket Forest">
-
-            <h3>
-                The Mysterious Cricket Forest
-            </h3>
-
-            <p>
-                A magical cricket scene where a mysterious forest
-                comes alive during a storm.
-            </p>
-
-            <div class="price">
-                Rs. 500
-            </div>
-
-            <button class="button" onclick="buyCartoon()">
-                Buy Now
-            </button>
-
-        </div>
+<h2>Featured Cartoons</h2>
 
 
-        <!-- FREE CARTOON -->
-
-        <div class="card">
-
-            <div style="
-                height:210px;
-                background:#eeeaff;
-                border-radius:12px;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                font-size:70px;
-            ">
-                🐱
-            </div>
-
-            <h3>
-                Cute Cat Cartoon
-            </h3>
-
-            <p>
-                A cute cartoon character available
-                as a free sample.
-            </p>
-
-            <div class="free">
-                FREE
-            </div>
-
-            <button class="button" onclick="freeCartoon()">
-                Get Free
-            </button>
-
-        </div>
+<div class="cards">
 
 
-        <!-- FREE CARTOON -->
 
-        <div class="card">
+<div class="card">
 
-            <div style="
-                height:210px;
-                background:#eeeaff;
-                border-radius:12px;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                font-size:70px;
-            ">
-                🚀
-            </div>
+<img src="cartoon1.png">
 
-            <h3>
-                Space Cartoon
-            </h3>
+<h3>
+The Mysterious Cricket Forest
+</h3>
 
-            <p>
-                Fun space-themed cartoon artwork
-                available as a free sample.
-            </p>
+<p>
+A magical cricket scene where a mysterious forest comes alive.
+</p>
 
-            <div class="free">
-                FREE
-            </div>
+<div class="free">
+FREE
+</div>
 
-            <button class="button" onclick="freeCartoon()">
-                Get Free
-            </button>
+<a class="button" href="cartoon1.png" download>
+Download
+</a>
 
-        </div>
-
-    </div>
-
-</section>
+</div>
 
 
-<section class="upload-section" id="upload">
 
-    <h2>🎨 Want to Sell Your Cartoon?</h2>
 
-    <p>
-        Upload your artwork and join Cartoon Market.
-    </p>
+<div class="card">
 
-    <button class="button" onclick="uploadMessage()">
-        Upload Your Cartoon
-    </button>
+<div style="
+height:210px;
+background:#eeeaff;
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+">
+🐱
+</div>
+
+<h3>
+Cute Cat Cartoon
+</h3>
+
+<p>
+A cute cartoon character free for everyone.
+</p>
+
+<div class="free">
+FREE
+</div>
+
+<button class="button">
+Download
+</button>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<div style="
+height:210px;
+background:#eeeaff;
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+">
+🚀
+</div>
+
+<h3>
+Space Cartoon
+</h3>
+
+<p>
+Fun space cartoon artwork for creative projects.
+</p>
+
+<div class="free">
+FREE
+</div>
+
+<button class="button">
+Download
+</button>
+
+</div>
+
+
+
+</div>
 
 </section>
+
 
 
 <footer>
 
-    <p>
-        © 2026 Cartoon Market — Made for Creative Artists
-    </p>
+© 2026 Cartoon Market - Free Cartoon Library
 
 </footer>
 
-
-<script>
-
-    function buyCartoon() {
-
-        alert(
-            "Thanks for your interest! 💜\n\n" +
-            "The payment system will be available soon."
-        );
-
-    }
-
-
-    function freeCartoon() {
-
-        alert(
-            "Your free cartoon is coming soon! 🎨"
-        );
-
-    }
-
-
-    function uploadMessage() {
-
-        alert(
-            "Artist upload system is coming soon! 🚀"
-        );
-
-    }
-
-</script>
 
 </body>
 </html>
